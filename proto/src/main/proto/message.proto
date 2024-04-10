@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.example";
+
+service ChatService {
+  rpc SendMessage (MessageRequest) returns (MessageResponse) {}
+}
+
+message MessageRequest {
+  string sender = 1;
+  string content = 2;
+}
+
+message MessageResponse {
+  string status = 1;
+}
